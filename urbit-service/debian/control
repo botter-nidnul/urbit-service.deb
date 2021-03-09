@@ -1,0 +1,10 @@
+Source: urbit-service
+Section: custom
+Priority: optional
+Build-Depends: debhelper-compat (= 12)
+Maintainer: ~botter-nidnul <botter-nidnul@protonmail.com>
+
+Package: urbit-service
+Architecture: all
+Depends: urbit, screen
+Description: Urbit systemd service

@@ -1,1 +1,3 @@
-urbit-service.deb
+cd urbit-service
+
+dpkg-buildpackage -uc -us

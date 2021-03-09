@@ -1,0 +1,20 @@
+[Unit]
+Description=Service for running Urbit
+After=network.target
+
+[Service]
+Type=simple
+User=urbit
+Group=urbit
+Environment=URBIT_PIER=urbit_pier
+Environment=AMES_PORT=41650
+StandardOutput=journal+console
+StandardError=inherit
+WorkingDirectory=~
+ExecStartPre=/bin/sleep 10
+ExecStart=/usr/bin/screen -Dm -S urbit /usr/bin/urbit -p $AMES_PORT $URBIT_PIER
+ExecStop=/usr/bin/screen -dr urbit -X stuff ^D
+TimeoutStopSec=5
+
+[Install]
+WantedBy=multi-user.target

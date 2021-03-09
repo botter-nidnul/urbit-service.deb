@@ -1,0 +1,11 @@
+#!/bin/bash
+set -e
+
+if id urbit &>/dev/null; then
+    echo 'user urbit already exists'
+else
+    echo 'creating user urbit'
+    useradd -mrU urbit
+fi
+
+#DEBHELPER#
